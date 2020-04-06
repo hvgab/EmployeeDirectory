@@ -1,0 +1,31 @@
+{% extends 'core/base.html' %}
+
+<table>
+    <thead>
+        <th>
+            <td></td>
+        </th>
+    </thead>
+    <tbody>
+        {% for object in object_list %}
+        <tr>
+            <td>employee_number</td>
+            <td>firstname</td>
+            <td>lastname</td>
+            <td>phone</td>
+            <td>email</td>
+            
+            <td>address_street</td>
+            <td>address_postcode</td>
+            <td>address_city</td>
+            
+            <td>birthdate</td>
+            <td>ssn</td>
+            <td>bank_account_number</td>
+            
+            <td>emergency_contacts</td>
+            <td>is_employed</td>            
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
