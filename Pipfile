@@ -12,6 +12,7 @@ django-guardian = "*"
 pylint = "*"
 "flake8" = "*"
 pydocstyle = "*"
+autopep8 = "*"
 
 [requires]
 python_version = "3"
