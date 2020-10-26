@@ -16,7 +16,7 @@ class Employee(BaseModel):
     class Meta:
         pass
     
-    employee_number = models.IntegerField(_("employee-number"))
+    employee_number = models.IntegerField(_("employee-number"), blank=True, null=True)
     firstname = models.CharField(_("firstname"), max_length=50)
     lastname = models.CharField(_("lastname"), max_length=50)
     phone = models.CharField(_("phone"), max_length=50)
@@ -68,7 +68,7 @@ class EmergencyContact(BaseModel):
     employee = models.ForeignKey('Employee', on_delete=models.CASCADE, related_name='emergency_contacts')
     name = models.CharField(_("name"), max_length=50)
     phone = models.CharField(_("phone"), max_length=50)
-    email = models.EmailField(_("email"), max_length=254)
+    email = models.EmailField(_("email"), max_length=320, blank=True, null=True)
 
     def __str__(self):
         return f"{self.name}, {self.phone}"
@@ -77,7 +77,7 @@ class ExternalSystem(BaseModel):
     """external systems in use by employees"""
     slug = models.SlugField(_("slug"), unique=True, max_length=15)
     name = models.CharField(_("name"), max_length=50)
-    url = models.URLField(_("url"), max_length=200)
+    url = models.URLField(_("url"), max_length=200, blank=True, null=True)
 
     def __str__(self):
         return self.name
